@@ -5,7 +5,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    background-image: url("copy of sci.jpg");
+    background-image: url("scisci.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -133,7 +133,7 @@ body {
 
     background: rgb(118, 167, 103);
     border: 3px solid #244d19;
-     border-radius: 10  px;
+     border-radius:10px;
 
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 
