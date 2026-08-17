@@ -1,0 +1,167 @@
+ <html>
+ 
+ <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+
+ <body style="background-image: url('copy of sci.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+   
+    <nav class="navbar">
+    <ul>
+       <h1> <li><a href="index (2).html">Our Infographic</a></li></h1>
+                <h1><li><a href="" class="nav-center">←CHOOSE YOUR AREA→ <a></li></h1>
+        <h1> <li><a href="index.html">Lobby</a></li></h1>
+    </ul>
+</nav>
+<br>
+<br>
+<div class="caption">
+   <Center> <h1>Science Interdisciplinary task<br>  🧪Chemical Safety Kit🧪 </h1></Center>
+    </div>
+
+<div class="member-carousel">
+        <button class="member-arrow" onclick="changeMember(-1)">‹</button>
+
+        <div class="member-window">
+            <div class="member-card" id="memberCard">
+                <div class="member-photo">
+                    <img id="memberImage" src="member1.jpg" alt="Member">
+                </div>
+
+                <div class="member-info">
+                    <h3 id="memberName">Member 1</h3>
+                    <span id="memberRole">Researcher</span>
+                    <p id="memberDescription">
+                        Responsible for gathering and organizing information.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <button class="member-arrow" onclick="changeMember(1)">›</button>
+    </div>
+
+    <div class="member-dots">
+        <span class="member-dot active" onclick="showMember(0)"></span>
+        <span class="member-dot" onclick="showMember(1)"></span>
+        <span class="member-dot" onclick="showMember(2)"></span>
+        <span class="member-dot" onclick="showMember(3)"></span>
+        <span class="member-dot" onclick="showMember(4)"></span>
+        <span class="member-dot" onclick="showMember(5)"></span>
+    </div>
+</section>
+
+<script>
+const members = [
+    {
+        name: "Player 1",
+        role: "Editor and Data Collector ",
+        image: "leader.jpg",
+        description: "Christopher Kyle V. Aquino"
+    },
+    {
+        name: "Player 2",
+        role: "Coder",
+        image: "hacker.jpg",
+        description: "Ian Jacob G. Baluyut"
+    },
+    {
+        name: "Player 3",
+        role: " Data Collector",
+        image: "abcd.jpg",
+        description: "Uziah Abcde S. Baluyut"
+    },
+    {
+        name: "Player 4",
+        role: " Data Collector",
+        image: "hanz.png",
+        description: "Zaijan Hans D. Basilio"
+    },
+    {
+        name: "Player 5",
+        role: "Editor and Data Collector",
+        image: "reen.jpg",
+        description: "Princess Kaireen E. Corcuera"
+    },
+    {
+        name: "Player 6",
+        role: "Edtior and Data Collector ",
+        image: "mats.jpg",
+        description: "Matilda S. Respicio"
+    }
+];
+
+let currentMember = 0;
+
+function showMember(index, direction = 1) {
+    currentMember = index;
+
+    const card = document.getElementById("memberCard");
+
+    card.classList.remove("slide-left", "slide-right");
+    void card.offsetWidth;
+
+    card.classList.add(direction === 1 ? "slide-left" : "slide-right");
+
+    document.getElementById("memberImage").src = members[index].image;
+    document.getElementById("memberName").textContent = members[index].name;
+    document.getElementById("memberRole").textContent = members[index].role;
+    document.getElementById("memberDescription").textContent = members[index].description;
+
+    document.querySelectorAll(".member-dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+    });
+}
+
+function changeMember(direction) {
+    let next = currentMember + direction;
+
+    if (next < 0) next = members.length - 1;
+    if (next >= members.length) next = 0;
+
+    showMember(next, direction);
+}
+</script>
+<br>
+<br>
+
+<div class="bento-section">
+
+    <h2 class="bento-title">EXPLORE OUR PROJECT</h2>
+
+    <div class="bento-grid">
+
+        <div class="bento-box safety">
+            <h3> Chemical Safety</h3>
+            <p>Learn how to properly handle, store, and dispose of household chemicals to prevent accidents and protect your family and manage your household.</p>
+        </div>
+
+        <div class="bento-box data">
+            <h3> Data</h3>
+            <p>Explore our collected data, results, and findings about chemical safety, sustainability, and responsible household practices for future needs.</p>
+        </div>
+
+        <div class="bento-box science">
+            <h3> Science</h3>
+            <p>Discover how household chemicals can affect people and the environment, and learn the science behind safe handling learning new knowledge.</p>
+        </div>
+
+        <div class="bento-box information">
+            <h3> Information</h3>
+            <p>Find useful safety tips, important facts, emergency responses, and sustainable practices for everyday household uses.</p>
+        </div>
+
+        <div class="bento-box task">
+            <h3> Our Task</h3>
+            <p>Explore our interdisciplinary project, outputs, and the knowledge we gained throughout the project we made along the way.</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+</body>
+</html>
